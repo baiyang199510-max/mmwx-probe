@@ -5,8 +5,10 @@ const APPEARANCE_CACHE = 'mmwx-probe-appearance'
 
 const KOMARI_THEMES = ['ocean', 'sunset', 'forest', 'midnight', 'rose']
 function normalizeTheme(value?: string): ThemeName {
+  const urlTheme = new URLSearchParams(window.location.search).get('theme')
+  if (urlTheme && (urlTheme === 'anime' || urlTheme === 'flat' || KOMARI_THEMES.includes(urlTheme))) return urlTheme as ThemeName
   if (value === 'anime' || value === 'flat' || KOMARI_THEMES.includes(value || '')) return value as ThemeName
-  return 'pixel'
+  return 'ocean'
 }
 
 export function applyAppearance(input?: ProbeAppearance) {
