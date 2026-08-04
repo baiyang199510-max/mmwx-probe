@@ -42,6 +42,14 @@ button { font: inherit; }
 :root.theme-anime .server-card > :not(.modal-backdrop) { position: relative; z-index: 1; }
 :root.theme-anime .server-table-wrap { border: 0; border-radius: 0; padding: 22px 24px; box-shadow: 0 4px 18px -6px rgba(139,92,246,.28); }:root.theme-anime .server-table-wrap::after { content: ''; position: absolute; inset: 4px; pointer-events: none; border: 19px solid transparent; border-image: url('/anime-lace.svg') 30 round; }.theme-anime .table-scroll { position: relative; z-index: 1; }.theme-anime .server-table td { border-color: #e6dcfa; }
 
+/* Komari 移植主题（配色取自 Komari Monitor 色板） */
+:root.theme-ocean { --primary: #0284c7; --surface: #fff; --border: #bae6fd; --muted: #0369a1; --page-bg: #f0f9ff; --radius: 12px; --shadow: 0 8px 28px rgba(2,132,199,.10); }
+:root.theme-sunset { --primary: #ec4899; --surface: #fff; --border: #fbcfe8; --muted: #be185d; --page-bg: #fff1f2; --radius: 12px; --shadow: 0 8px 28px rgba(236,72,153,.10); }
+:root.theme-forest { --primary: #059669; --surface: #fff; --border: #a7f3d0; --muted: #047857; --page-bg: #ecfdf5; --radius: 12px; --shadow: 0 8px 28px rgba(5,150,105,.10); }
+:root.theme-midnight { --primary: #8b5cf6; --surface: #1e293b; --border: #334155; --muted: #94a3b8; --page-bg: #0f172a; color: #e5e7eb; --radius: 12px; --shadow: 0 8px 30px rgba(0,0,0,.35); }
+:root.theme-rose { --primary: #e11d48; --surface: #fff; --border: #fecdd3; --muted: #be123c; --page-bg: #fff1f2; --radius: 12px; --shadow: 0 8px 28px rgba(225,29,72,.10); }
+:root.theme-midnight .ping-head strong { color: #f8fafc; }
+
 :root.dark { color: #e5e7eb; --surface: #111827; --border: #334155; --muted: #94a3b8; --page-bg: #0f172a; --shadow: 0 8px 30px rgba(0,0,0,.35); }
 :root.dark .ping-head strong { color: #f8fafc; }
 :root.theme-anime .ping-blocks i { background: #f6f2fc; }

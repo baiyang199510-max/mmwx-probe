@@ -3,8 +3,10 @@ import type { ProbeAppearance, ProbePayload, ThemeName } from './types'
 
 const APPEARANCE_CACHE = 'mmwx-probe-appearance'
 
+const KOMARI_THEMES = ['ocean', 'sunset', 'forest', 'midnight', 'rose']
 function normalizeTheme(value?: string): ThemeName {
-  return value === 'anime' || value === 'flat' ? value : 'pixel'
+  if (value === 'anime' || value === 'flat' || KOMARI_THEMES.includes(value || '')) return value as ThemeName
+  return 'pixel'
 }
 
 export function applyAppearance(input?: ProbeAppearance) {
@@ -15,10 +17,10 @@ export function applyAppearance(input?: ProbeAppearance) {
       return null
     }
   })()
-  const appearance = input || cached || { theme: 'pixel', color_mode: 'light' }
+  const appearance = input || cached || { theme: 'ocean', color_mode: 'light' }
   const theme = normalizeTheme(appearance.theme)
   const root = document.documentElement
-  root.classList.remove('theme-pixel', 'theme-flat', 'theme-anime', 'dark')
+  root.classList.remove('theme-pixel', 'theme-flat', 'theme-anime', 'theme-ocean', 'theme-sunset', 'theme-forest', 'theme-midnight', 'theme-rose', 'dark')
   root.classList.add(`theme-${theme}`)
   const dark = appearance.color_mode === 'dark' ||
     (appearance.color_mode === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
